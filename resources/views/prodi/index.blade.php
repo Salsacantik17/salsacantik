@@ -32,7 +32,7 @@
                 <h3 class="card-title">Data Program Studi</h3>
   
                <div class="card-tools">
-                <a href="/prodi/create" class="btn btn-primary">Tambah</a>
+                <a href="/prodi/create" class="btn btn-success">Tambah</a>
                 
                </div>
               </div>
@@ -54,8 +54,12 @@
                       <td>{{$loop->iteration}}</td>
                       <td>{{$p->nama_prodi}}</td>
                       <td></td>
-                      <td><a href="" class="btn btn-warning">Edit</a>
-                      <a href="" class="btn btn-danger">Hapus</a>
+                      <td><a href="{{ url("prodi/$p->id/edit") }}" class="btn btn-warning">Edit</a>
+                        <form action="{{ url("prodi/$p->id") }}" method="post" class='d-inline'>
+                          @method('delete')
+                          @csrf
+                          <button class="btn btn-danger" onclick="return confirm('Yakin, mau di delete cantik?')">Hapus</button>
+                        </form>
                       @endforeach
                     </td>
                     </tr>
