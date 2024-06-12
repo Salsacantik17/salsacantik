@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Mahasiswa;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Prodi;
@@ -23,5 +24,27 @@ class DatabaseSeeder extends Seeder
         ]);
 
         prodi::factory(10)->create();
+
+        Mahasiswa::create([
+            'nim' => 'E020322112',
+            'nama' => 'Salsacantik',
+            'no_hp' => '085349768080',
+            'alamat' => 'Soetoyo S',
+            'foto' => 'E020322112.jpg',
+            'password' => '123',
+            'prodi_id' => 1,
+        ]);
+
+        Mahasiswa::create([
+            'nim' => 'E020322089',
+            'nama' => 'Memewcantik',
+            'no_hp' => '087899317340',
+            'alamat' => 'Cemara',
+            'foto' => 'E020322112.jpg',
+            'password' => '123',
+            'prodi_id' => 2,
+        ]);
+
+        Mahasiswa::factory(100)->create();
     }
 }

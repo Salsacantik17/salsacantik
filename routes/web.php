@@ -33,4 +33,5 @@ Route::get('/data/{id}', [MahasiswaController::class, 'show']);
 // Route::post('/prodi', [ProdiController::class, 'store']);
 
 Route::resource('/prodi', ProdiController::class);
+Route::resource('/mahasiswa', MahasiswaController::class);
 
